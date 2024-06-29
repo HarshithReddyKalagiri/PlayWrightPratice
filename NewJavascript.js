@@ -101,3 +101,59 @@ const numberToWords = (number) => {
 }
 
 console.log(`${number2} in words is ${numberToWords(number2)}`);
+
+// write a javascript program to get the last day of a month
+const getLastDayOfMonth = (year, month) => {
+    return new Date(year, month + 1, 0).getDate();  //0 is the last day of the previous month
+}
+console.log(`Last day of month is ${getLastDayOfMonth(2024, 3)}`);
+
+
+//write a javascript program to get the first day of a month
+const getFirstDayOfMonth = (year, month) => {
+    return new Date(year, month, 1).getDay();   //1 is the first day of the month
+}
+console.log(`First day of month is ${getFirstDayOfMonth(2024, 4)}`);
+
+// write a javascript program to get the number of days in a month
+const getDaysInMonth = (year, month) => {
+    return new Date(year, month + 1, 0).getDate();
+}
+console.log(`Number of days in month is ${getDaysInMonth(2024, 3)}`);
+
+// write a javascript program to get the number of days left in a year
+const getDaysLeftInYear = () => {
+    const today = new Date();
+    //const year = today.getFullYear();
+    const daysInYear = 365;
+    const daysElapsed = Math.floor((today - new Date(year, 0, 0)) / 86400000);  //difference in milliseconds
+    return daysInYear - daysElapsed;
+}
+console.log(`Number of days left in year is ${getDaysLeftInYear()}`);
+
+console.log(today);
+console.log(year);
+
+// write a javascript program to get the number of days left in a month
+const getDaysLeftInMonth = () => {
+    const today = new Date().getDate();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    return daysInMonth - today;
+}
+console.log(`Number of days left in month is ${getDaysLeftInMonth()}`);
+
+// write a javascript program to get the number of days left in a week 
+const getDaysLeftInWeek = () => {
+    const today = new Date().getDay();
+    const daysInWeek = 7;
+    return daysInWeek - today;
+}
+console.log(`Number of days left in week is ${getDaysLeftInWeek()}`);
+
+// write a javascript program to convert a sting to title case
+const toTitleCase = (String) => {
+    return String.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+}
+console.log(toTitleCase('hello world'));
+ 
